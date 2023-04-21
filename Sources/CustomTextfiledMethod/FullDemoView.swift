@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct FullDemoView: View {
+public struct FullDemoView: View {
     
     @State private var fName    : String = ""
     @State private var mName    : String = ""
     @State private var lName    : String = ""
     
-    var body: some View {
+    public var body: some View {
         VStack {
             
             Text("Custom Textfiled")

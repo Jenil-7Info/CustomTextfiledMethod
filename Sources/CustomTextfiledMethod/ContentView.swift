@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+public struct ContentView: View {
     
     @State private var fName        : String    = ""
     @State private var lName        : String    = ""
@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var pass         : String    = ""
     @State private var ConfirmPass  : String    = ""
         
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 25) {
             
             Text("SignIn View")
