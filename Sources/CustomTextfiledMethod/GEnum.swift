@@ -21,3 +21,11 @@ public enum ImageTextfiled: String {
     case customImage
     case none
 }
+
+public enum TextfiledType: String {
+    case NameType
+    case EmailType
+    case TenDigitPhoneNumberType
+    case PasswordType
+    case ConfirmPasswordType
+}

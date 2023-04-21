@@ -35,21 +35,24 @@ public struct FullDemoView: View {
                         text: $fName,
                         keyBoardType: .default,
                         style: .CapsuleTextFiled,
-                        imageStyle: .none)
+                        imageStyle: .none,
+                        textFiledType: .NameType)
                     
                     CustomTextFiledMethod(
                         placeHolderName: "Middle Name",
                         text: $mName,
                         keyBoardType: .default,
                         style: .OutLineTextFiled,
-                        imageStyle: .none)
+                        imageStyle: .none,
+                        textFiledType: .NameType)
                     
                     CustomTextFiledMethod(
                         placeHolderName: "Last Name",
                         text: $lName,
                         keyBoardType: .default,
                         style: .UnderLineTextFiled,
-                        imageStyle: .none)
+                        imageStyle: .none,
+                        textFiledType: .NameType)
                         .padding(.bottom, 30)
                 }
                 
@@ -65,6 +68,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .sfImage,
+                        textFiledType: .NameType,
                         sfImage: "person.fill")
                     
                     CustomTextFiledMethod(
@@ -73,6 +77,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .sfImage,
+                        textFiledType: .NameType,
                         sfImage: "person.fill")
                     
                     CustomTextFiledMethod(
@@ -81,6 +86,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .sfImage,
+                        textFiledType: .NameType,
                         sfImage: "person.fill")
                         .padding(.bottom, 30)
                 }
@@ -97,6 +103,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .customImage,
+                        textFiledType: .NameType,
                         customImage: "qr")
                     
                     CustomTextFiledMethod(
@@ -105,6 +112,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .customImage,
+                        textFiledType: .NameType,
                         customImage: "qr")
                     
                     CustomTextFiledMethod(
@@ -113,6 +121,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .customImage,
+                        textFiledType: .NameType,
                         customImage: "qr")
                         .padding(.bottom, 30)
                 }
@@ -130,6 +139,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .none,
+                        textFiledType: .NameType,
                         isDisplayCloseBtn: false
                     )
                     
@@ -139,6 +149,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .sfImage,
+                        textFiledType: .NameType,
                         sfImage: "person.fill",
                         isDisplayCloseBtn: false
                     )
@@ -149,6 +160,7 @@ public struct FullDemoView: View {
                         keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .customImage,
+                        textFiledType: .NameType,
                         customImage: "qr",
                         isDisplayCloseBtn: false
                     )

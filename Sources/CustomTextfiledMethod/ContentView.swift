@@ -34,6 +34,7 @@ public struct ContentView: View {
                     text: $fName,
                     style: .UnderLineTextFiled,
                     imageStyle: .none,
+                    textFiledType: .NameType,
                     isDisplayCloseBtn: false
                 )
                 
@@ -42,6 +43,7 @@ public struct ContentView: View {
                     text: $lName,
                     style: .UnderLineTextFiled,
                     imageStyle: .none,
+                    textFiledType: .NameType,
                     isDisplayCloseBtn: false  //default true
                 )
             }
@@ -52,6 +54,7 @@ public struct ContentView: View {
                 text: $phone,
                 style: .UnderLineTextFiled,
                 imageStyle: .customImage,
+                textFiledType: .TenDigitPhoneNumberType,
                 customImage: "phone"
             )
             
@@ -61,6 +64,7 @@ public struct ContentView: View {
                 text: $email,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .EmailType,
                 sfImage: "envelope.fill"
             )
             
@@ -70,6 +74,7 @@ public struct ContentView: View {
                 text: $pass,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false
             )
@@ -80,6 +85,7 @@ public struct ContentView: View {
                 text: $ConfirmPass,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .ConfirmPasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false
             )

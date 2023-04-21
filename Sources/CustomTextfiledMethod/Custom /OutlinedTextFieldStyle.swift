@@ -15,6 +15,7 @@ public struct OutlinedTextFieldStyle: View {
     @Binding var text: String
     @State var keyBoardType: UIKeyboardType
     @State var imageStyle: ImageTextfiled
+    @State var textfiledType: TextfiledType
     @State var isCloseBtn : Bool
     @State var sfImage: String?
     @State var cImage: String?
@@ -38,10 +39,41 @@ public struct OutlinedTextFieldStyle: View {
                         .foregroundColor(Color(UIColor.systemGray2))
                 }
             }
-            
-            TextField(placeHolderName, text: $text)
-                .autocorrectionDisabled(true)
-                .keyboardType(keyBoardType)
+
+            //MARK: - TextFiled Type
+            switch textfiledType {
+            case .NameType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .EmailType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .TenDigitPhoneNumberType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .PasswordType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+
+                
+            case .ConfirmPasswordType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            }
             
             //NOTE: - display Close button
             if isCloseBtn {

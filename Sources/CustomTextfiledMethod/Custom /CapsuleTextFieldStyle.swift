@@ -14,6 +14,7 @@ public struct CapsuleTextFieldStyle: View {
     @Binding var text: String
     @State var keyBoardType: UIKeyboardType
     @State var imageStyle: ImageTextfiled
+    @State var textfiledType: TextfiledType
     @State var isCloseBtn : Bool
     @State var sfImage: String?
     @State var cImage: String?
@@ -37,9 +38,40 @@ public struct CapsuleTextFieldStyle: View {
                 }
             }
             
-            TextField(placeHolderName, text: $text)
-                .autocorrectionDisabled(true)
-                .keyboardType(keyBoardType)
+            //MARK: - TextFiled Type
+            switch textfiledType {
+            case .NameType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .EmailType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .TenDigitPhoneNumberType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            case .PasswordType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+
+                
+            case .ConfirmPasswordType:
+                
+                TextField(placeHolderName, text: $text)
+                    .autocorrectionDisabled(true)
+                    .keyboardType(keyBoardType)
+                
+            }
             
             //NOTE: - display Close button
             if isCloseBtn {

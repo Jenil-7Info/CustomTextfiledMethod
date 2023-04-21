@@ -15,6 +15,7 @@ public struct CustomTextFiledMethod: View {
     @State var keyBoardType: UIKeyboardType
     @State var style: CustomTextFiledStyle
     @State var imageStyle: ImageTextfiled
+    @State var textFiledType: TextfiledType
     @State var sfImage: String?
     @State var customImage: String?
     @State var isDisplayCloseBtn : Bool
@@ -26,6 +27,7 @@ public struct CustomTextFiledMethod: View {
     ///     - keyBoardType  : By default ".default" set.
     ///     - style         : You can choose textFiled Style [i.c. Oultlined, Capsules, Underlined]
     ///     - imageStyle    : You can also select the image style [i.c. sfImage, Customimage, none]
+    ///     - textFiledType : You can Select the TextFiled Type [i.c. Name, Email, Pass, ect...]
     ///     - sfImage       : This is optional parameter. If You select imageStyle.sfImage, then use this parameter.
     ///     - customImage   : This is optional parameter. If You select imageStyle.Customimage, then use this parameter.
     ///     - isDisplayCloseBtn : By Default is True. 
@@ -36,6 +38,7 @@ public struct CustomTextFiledMethod: View {
         keyBoardType: UIKeyboardType = .default,
         style: CustomTextFiledStyle,
         imageStyle: ImageTextfiled,
+        textFiledType: TextfiledType,
         sfImage: String? = nil,
         customImage: String? = nil,
         isDisplayCloseBtn: Bool = true
@@ -45,6 +48,7 @@ public struct CustomTextFiledMethod: View {
         self.keyBoardType = keyBoardType
         self.style = style
         self.imageStyle = imageStyle
+        self.textFiledType = textFiledType
         self.sfImage = sfImage
         self.customImage = customImage
         self.isDisplayCloseBtn = isDisplayCloseBtn
@@ -62,6 +66,7 @@ public struct CustomTextFiledMethod: View {
                 text: $text,
                 keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
+                textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,
                 sfImage: sfImage,
                 cImage: customImage
@@ -75,6 +80,7 @@ public struct CustomTextFiledMethod: View {
                 text: $text,
                 keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
+                textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,
                 sfImage: sfImage,
                 cImage: customImage
@@ -88,6 +94,7 @@ public struct CustomTextFiledMethod: View {
                 text: $text,
                 keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
+                textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,
                 sfImage: sfImage,
                 cImage: customImage
