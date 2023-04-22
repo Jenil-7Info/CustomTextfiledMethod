@@ -33,7 +33,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "First Name",
                         text: $fName,
-                        keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .none,
                         textFiledType: .NameType)
@@ -41,7 +40,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Middle Name",
                         text: $mName,
-                        keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .none,
                         textFiledType: .NameType)
@@ -49,7 +47,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Last Name",
                         text: $lName,
-                        keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .none,
                         textFiledType: .NameType)
@@ -65,7 +62,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "First Name",
                         text: $fName,
-                        keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .sfImage,
                         textFiledType: .NameType,
@@ -74,7 +70,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Middle Name",
                         text: $mName,
-                        keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .sfImage,
                         textFiledType: .NameType,
@@ -83,7 +78,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Last Name",
                         text: $lName,
-                        keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .sfImage,
                         textFiledType: .NameType,
@@ -100,7 +94,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "First Name",
                         text: $fName,
-                        keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .customImage,
                         textFiledType: .NameType,
@@ -109,7 +102,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Middle Name",
                         text: $mName,
-                        keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .customImage,
                         textFiledType: .NameType,
@@ -118,7 +110,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Last Name",
                         text: $lName,
-                        keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .customImage,
                         textFiledType: .NameType,
@@ -136,7 +127,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "First Name",
                         text: $fName,
-                        keyBoardType: .default,
                         style: .CapsuleTextFiled,
                         imageStyle: .none,
                         textFiledType: .NameType,
@@ -146,7 +136,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Middle Name",
                         text: $mName,
-                        keyBoardType: .default,
                         style: .OutLineTextFiled,
                         imageStyle: .sfImage,
                         textFiledType: .NameType,
@@ -157,7 +146,6 @@ public struct FullDemoView: View {
                     CustomTextFiledMethod(
                         placeHolderName: "Last Name",
                         text: $lName,
-                        keyBoardType: .default,
                         style: .UnderLineTextFiled,
                         imageStyle: .customImage,
                         textFiledType: .NameType,

@@ -12,7 +12,6 @@ public struct CustomTextFiledMethod: View {
     
     @State var placeHolderName: String
     @Binding var text: String
-    @State var keyBoardType: UIKeyboardType
     @State var style: CustomTextFiledStyle
     @State var imageStyle: ImageTextfiled
     @State var textFiledType: TextfiledType
@@ -24,7 +23,6 @@ public struct CustomTextFiledMethod: View {
     /// - Parameters:
     ///     - placerHolder  : Assign a place holder Text
     ///     - text          : A binding to the text varible
-    ///     - keyBoardType  : By default ".default" set.
     ///     - style         : You can choose textFiled Style [i.c. Oultlined, Capsules, Underlined]
     ///     - imageStyle    : You can also select the image style [i.c. sfImage, Customimage, none]
     ///     - textFiledType : You can Select the TextFiled Type [i.c. Name, Email, Pass, ect...]
@@ -35,7 +33,6 @@ public struct CustomTextFiledMethod: View {
     public init(
         placeHolderName: String,
         text: Binding<String>,
-        keyBoardType: UIKeyboardType = .default,
         style: CustomTextFiledStyle,
         imageStyle: ImageTextfiled,
         textFiledType: TextfiledType,
@@ -45,7 +42,6 @@ public struct CustomTextFiledMethod: View {
     ) {
         self.placeHolderName = placeHolderName
         self._text = text
-        self.keyBoardType = keyBoardType
         self.style = style
         self.imageStyle = imageStyle
         self.textFiledType = textFiledType
@@ -64,7 +60,6 @@ public struct CustomTextFiledMethod: View {
             OutlinedTextFieldStyle(
                 placeHolderName: placeHolderName,
                 text: $text,
-                keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
                 textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,
@@ -78,7 +73,6 @@ public struct CustomTextFiledMethod: View {
             UnderlinedTextFieldStyle(
                 placeHolderName: placeHolderName,
                 text: $text,
-                keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
                 textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,
@@ -92,7 +86,6 @@ public struct CustomTextFiledMethod: View {
             CapsuleTextFieldStyle(
                 placeHolderName: placeHolderName,
                 text: $text,
-                keyBoardType: keyBoardType,
                 imageStyle: imageStyle,
                 textfiledType: textFiledType,
                 isCloseBtn: isDisplayCloseBtn,

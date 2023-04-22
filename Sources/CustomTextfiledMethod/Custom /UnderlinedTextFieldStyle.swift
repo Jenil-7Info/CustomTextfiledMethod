@@ -12,7 +12,6 @@ public struct UnderlinedTextFieldStyle: View {
     
     @State var placeHolderName: String
     @Binding var text: String
-    @State var keyBoardType: UIKeyboardType
     @State var imageStyle: ImageTextfiled
     @State var textfiledType: TextfiledType
     @State var isCloseBtn : Bool
@@ -44,32 +43,32 @@ public struct UnderlinedTextFieldStyle: View {
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.default)
                 
             case .EmailType:
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.emailAddress)
                 
             case .TenDigitPhoneNumberType:
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.numberPad)
                 
             case .PasswordType:
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.default)
 
                 
             case .ConfirmPasswordType:
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.default)
                 
             }
             
