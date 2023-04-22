@@ -26,7 +26,7 @@ public struct ContentView: View {
             
             Spacer()
             
-            //NOTE: - name
+            //MARK: - Name
             HStack(spacing: 20) {
                 
                 CustomTextFiledMethod(
@@ -48,7 +48,7 @@ public struct ContentView: View {
                 )
             }
             
-            //NOTE: - Phone Number
+            //MARK: - Phone Number
             CustomTextFiledMethod(
                 placeHolderName: "Phone Number",
                 text: $phone,
@@ -58,7 +58,7 @@ public struct ContentView: View {
                 customImage: "phone"
             )
             
-            //NOTE: - Email
+            //MARK: - Email
             CustomTextFiledMethod(
                 placeHolderName: "Email Address",
                 text: $email,
@@ -68,7 +68,7 @@ public struct ContentView: View {
                 sfImage: "envelope.fill"
             )
             
-            //NOTE: - Password
+            //MARK: - Password
             CustomTextFiledMethod(
                 placeHolderName: "Password",
                 text: $pass,
@@ -79,7 +79,7 @@ public struct ContentView: View {
                 isDisplayCloseBtn: false
             )
             
-            //NOTE: - Password
+            //MARK: - Password
             CustomTextFiledMethod(
                 placeHolderName: "Confrim Password",
                 text: $ConfirmPass,
@@ -92,8 +92,9 @@ public struct ContentView: View {
             
             Spacer()
             
-            //NOTE: - Submit Button
+            //MARK: - Submit Button
             Button {
+         
                 
             } label: {
                 Text("Submit")

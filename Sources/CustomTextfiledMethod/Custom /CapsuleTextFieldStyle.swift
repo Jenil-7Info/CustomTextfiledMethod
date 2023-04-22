@@ -63,13 +63,11 @@ public struct CapsuleTextFieldStyle: View {
                     .autocorrectionDisabled(true)
                     .keyboardType(.default)
 
-                
             case .ConfirmPasswordType:
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
                     .keyboardType(.default)
-                
             }
             
             //NOTE: - display Close button
@@ -86,8 +84,7 @@ public struct CapsuleTextFieldStyle: View {
                             .foregroundColor(.gray)
                     }
                 }
-            }
-            
+            }   
         }
         .padding(.vertical)
         .padding(.horizontal, 24)

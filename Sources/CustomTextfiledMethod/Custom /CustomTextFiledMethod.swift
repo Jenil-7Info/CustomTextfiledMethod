@@ -25,7 +25,8 @@ public struct CustomTextFiledMethod: View {
     ///     - text          : A binding to the text varible
     ///     - style         : You can choose textFiled Style [i.c. Oultlined, Capsules, Underlined]
     ///     - imageStyle    : You can also select the image style [i.c. sfImage, Customimage, none]
-    ///     - textFiledType : You can Select the TextFiled Type [i.c. Name, Email, Pass, ect...]
+    ///     - textFiledType : You can Select the TextFiled Type [i.c. Name, Email, Pass, ect...],
+    ///     this attributes use the keyborad type...
     ///     - sfImage       : This is optional parameter. If You select imageStyle.sfImage, then use this parameter.
     ///     - customImage   : This is optional parameter. If You select imageStyle.Customimage, then use this parameter.
     ///     - isDisplayCloseBtn : By Default is True. 
@@ -91,8 +92,7 @@ public struct CustomTextFiledMethod: View {
                 isCloseBtn: isDisplayCloseBtn,
                 sfImage: sfImage,
                 cImage: customImage
-            )
-                                                           
+            )                                   
         }
     }
 }

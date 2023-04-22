@@ -11,80 +11,107 @@ import SwiftUI
 import CustomTextfiledMethod
 
 struct ContentView: View {
-        
+    
     var body: some View {
         VStack(spacing: 25) {
             
             Text("SignIn View")
-                .leftH()                //write horizonal left
-                .headingFont()          //title Style
+                .leftH()
+                .headingFont()
                 .padding(.vertical)
             
             Spacer()
             
-            //NOTE: - name
+            //MARK: - Name
             HStack(spacing: 20) {
                 
                 CustomTextFiledMethod(
                     placeHolderName: "First Name",
-                    text: <#Binding<String>#>,
+                    text: $fName,
                     style: .UnderLineTextFiled,
                     imageStyle: .none,
-                    isDisplayCloseBtn: false //default true
+                    textFiledType: .NameType,
+                    isDisplayCloseBtn: false
                 )
                 
                 CustomTextFiledMethod(
                     placeHolderName: "Last Name",
-                    text: <#Binding<String>#>,
+                    text: $lName,
                     style: .UnderLineTextFiled,
                     imageStyle: .none,
+                    textFiledType: .NameType,
                     isDisplayCloseBtn: false  //default true
                 )
             }
             
-            //NOTE: - Phone Number
+            //MARK: - Phone Number
             CustomTextFiledMethod(
                 placeHolderName: "Phone Number",
-                text: <#Binding<String>#>,
+                text: $phone,
                 style: .UnderLineTextFiled,
                 imageStyle: .customImage,
+                textFiledType: .TenDigitPhoneNumberType,
                 customImage: "phone"
             )
             
-            //NOTE: - Email
+            //MARK: - Email
             CustomTextFiledMethod(
                 placeHolderName: "Email Address",
-                text: <#Binding<String>#>,
+                text: $email,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .EmailType,
                 sfImage: "envelope.fill"
             )
             
-            //NOTE: - Password
+            //MARK: - Password
             CustomTextFiledMethod(
                 placeHolderName: "Password",
-                text: <#Binding<String>#>,
+                text: $pass,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false
             )
             
-            //NOTE: - Password
+            //MARK: - Password
             CustomTextFiledMethod(
                 placeHolderName: "Confrim Password",
-                text: <#Binding<String>#>,
+                text: $ConfirmPass,
                 style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
+                textFiledType: .ConfirmPasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false
             )
             
             Spacer()
             
-            //NOTE: - Submit Button
+            //MARK: - Submit Button
             Button {
-                
+            
+                //MARK: - Use the RegeEx Function 
+                    if isValidName(text: fName) {
+                        //Sucessful
+                    }
+                    if isValidName(text: lName) {
+                        //Sucessful
+                    }
+                    if isValidPhoneNumber(phone: phone) {
+                        //Sucessful
+                    }
+                    if isValidEmail(email: email) {
+                        //Sucessful
+                    } 
+                    if isBothSamePassword(pass, ConfirmPassword: ConfirmPass) {
+                        //Sucessful
+                    }
+                    else {
+                        //Handle Error OR Alert message...
+                    }
+            
+            
             } label: {
                 Text("Submit")
                     .bold()
@@ -97,6 +124,7 @@ struct ContentView: View {
                 Capsule()
             }
             .padding(.bottom)
+            
         }
         .padding(.horizontal)
     }

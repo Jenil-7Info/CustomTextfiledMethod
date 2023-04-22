@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 //MARK: - Custom TextFiled Style
 public enum CustomTextFiledStyle: String {
     case OutLineTextFiled
@@ -22,6 +23,7 @@ public enum ImageTextfiled: String {
     case none
 }
 
+//MARK: - TextFieled Type
 public enum TextfiledType: String {
     case NameType
     case EmailType
