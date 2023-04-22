@@ -25,7 +25,7 @@ public struct UnderlinedTextFieldStyle: View {
                 if sfImage != nil {
                     Image(systemName: sfImage!)
                         .resizable()
-                        .frame(width: 18, height: 18)
+                        .frame(width: 20, height: 18)
                         .foregroundColor(Color(UIColor.systemGray4))
                 }
             }

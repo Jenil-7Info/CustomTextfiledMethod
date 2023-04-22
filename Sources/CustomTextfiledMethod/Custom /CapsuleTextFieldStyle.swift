@@ -25,7 +25,7 @@ public struct CapsuleTextFieldStyle: View {
                 if sfImage != nil {
                     Image(systemName: sfImage!)
                         .resizable()
-                        .frame(width: 18, height: 18)
+                        .frame(width: 20, height: 18)
                         .foregroundColor(Color(UIColor.systemGray4))
                 }
             }
@@ -34,7 +34,7 @@ public struct CapsuleTextFieldStyle: View {
                     Image(cImage!)
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 18, height: 18)
+                        .frame(width: 20, height: 18)
                         .foregroundColor(Color(UIColor.systemGray2))
                 }
             }
