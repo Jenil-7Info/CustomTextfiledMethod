@@ -58,7 +58,7 @@ public struct OutlinedTextFieldStyle: View {
                 
                 TextField(placeHolderName, text: $text)
                     .autocorrectionDisabled(true)
-                    .keyboardType(keyBoardType)
+                    .keyboardType(.namePhonePad)
                 
             case .PasswordType:
                 
