@@ -83,7 +83,7 @@ public struct ContentView: View {
             CustomTextFiledMethod(
                 placeHolderName: "Confrim Password",
                 text: $ConfirmPass,
-                style: .UnderLineTextFiled,
+                style: .OutLineTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .ConfirmPasswordType,
                 sfImage: "square.and.pencil.circle.fill",

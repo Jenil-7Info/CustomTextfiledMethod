@@ -18,6 +18,8 @@ public struct UnderlinedTextFieldStyle: View {
     @State var sfImage: String?
     @State var cImage: String?
     
+    @State  var isShowPass: Bool = false
+    
     public var body: some View {
         HStack {
             
@@ -61,18 +63,40 @@ public struct UnderlinedTextFieldStyle: View {
                 
             case .PasswordType:
                 
-                TextField(placeHolderName, text: $text)
-                    .autocorrectionDisabled(true)
-                    .keyboardType(.default)
-
+                if isShowPass {
+                    TextField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                } else {
+                    SecureField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                }
                 
             case .ConfirmPasswordType:
                 
-                TextField(placeHolderName, text: $text)
-                    .autocorrectionDisabled(true)
-                    .keyboardType(.default)
+                if isShowPass {
+                    TextField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                } else {
+                    SecureField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                }
                 
             }
+            
+            if textfiledType == .PasswordType || textfiledType == .ConfirmPasswordType {
+                
+                Button {
+                    isShowPass.toggle()
+                } label: {
+                    Image(systemName: isShowPass ? "eye.slash.fill" : "eye.fill")
+                        .foregroundColor(.gray)
+                }
+            }
+            
             
             //NOTE: - display Close button
             if isCloseBtn {

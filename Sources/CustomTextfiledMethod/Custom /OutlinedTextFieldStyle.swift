@@ -18,6 +18,7 @@ public struct OutlinedTextFieldStyle: View {
     @State var isCloseBtn : Bool
     @State var sfImage: String?
     @State var cImage: String?
+    @State var isShowPass: Bool = false
     
     public var body: some View {
         
@@ -63,17 +64,39 @@ public struct OutlinedTextFieldStyle: View {
                 
             case .PasswordType:
                 
-                TextField(placeHolderName, text: $text)
-                    .autocorrectionDisabled(true)
-                    .keyboardType(.default)
-
+                if isShowPass {
+                    TextField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                } else {
+                    SecureField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                }
                 
             case .ConfirmPasswordType:
                 
-                TextField(placeHolderName, text: $text)
-                    .autocorrectionDisabled(true)
-                    .keyboardType(.default)
+                if isShowPass {
+                    TextField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                } else {
+                    SecureField(placeHolderName, text: $text)
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
+                }
                 
+            }
+            
+            //MARK: - Show and Hide password
+            if textfiledType == .PasswordType || textfiledType == .ConfirmPasswordType {
+                
+                Button {
+                    isShowPass.toggle()
+                } label: {
+                    Image(systemName: isShowPass ? "eye.slash.fill" : "eye.fill")
+                        .foregroundColor(.gray)
+                }
             }
             
             //NOTE: - display Close button
