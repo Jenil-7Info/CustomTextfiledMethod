@@ -24,6 +24,8 @@ public struct CapsuleTextFieldStyle: View {
             if imageStyle == .sfImage {
                 if sfImage != nil {
                     Image(systemName: sfImage!)
+                        .resizable()
+                        .frame(width: 18, height: 18)
                         .foregroundColor(Color(UIColor.systemGray4))
                 }
             }
