@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ContentView: View {
+public struct SignInCustomWithAnimationTextfiledView: View {
     
     @State private var fName        : String    = ""
     @State private var lName        : String    = ""
@@ -17,80 +17,88 @@ public struct ContentView: View {
     @State private var ConfirmPass  : String    = ""
         
     public var body: some View {
-        VStack(spacing: 25) {
+        VStack(spacing: 20) {
             
             Text("SignIn View")
                 .leftH()
                 .headingFont()
                 .padding(.vertical)
             
-            Spacer()
+            //MARK: - First Name
+            CustomTextFiledMethod(
+                placeHolderName: "First Name",
+                text: $fName,
+                style: .OutLineTextFiled,
+                imageStyle: .sfImage,
+                textFiledType: .NameType,
+                sfImage: "person.fill",
+                isDisplayCloseBtn: true,
+                isAnimation: true,
+                textForgroundColor: .blue
+            )
             
-            //MARK: - Name
-            HStack(spacing: 20) {
-                
-                CustomTextFiledMethod(
-                    placeHolderName: "First Name",
-                    text: $fName,
-                    style: .UnderLineTextFiled,
-                    imageStyle: .none,
-                    textFiledType: .NameType,
-                    isDisplayCloseBtn: false
-                )
-                
-                CustomTextFiledMethod(
-                    placeHolderName: "Last Name",
-                    text: $lName,
-                    style: .UnderLineTextFiled,
-                    imageStyle: .none,
-                    textFiledType: .NameType,
-                    isDisplayCloseBtn: false  //default true
-                )
-            }
+            //MARK: - Last Name
+            CustomTextFiledMethod(
+                placeHolderName: "Last Name",
+                text: $lName,
+                style: .OutLineTextFiled,
+                imageStyle: .sfImage,
+                textFiledType: .NameType,
+                sfImage: "person.fill",
+                isDisplayCloseBtn: true, //default true
+                isAnimation: true,
+                textForgroundColor: .blue
+            )
             
             //MARK: - Phone Number
             CustomTextFiledMethod(
                 placeHolderName: "Phone Number",
                 text: $phone,
-                style: .UnderLineTextFiled,
+                style: .OutLineTextFiled,
                 imageStyle: .customImage,
                 textFiledType: .TenDigitPhoneNumberType,
-                customImage: "phone"
+                customImage: "phone",
+                isAnimation: true,
+                textForgroundColor: .blue
             )
             
             //MARK: - Email
             CustomTextFiledMethod(
                 placeHolderName: "Email Address",
                 text: $email,
-                style: .UnderLineTextFiled,
+                style: .OutLineTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .EmailType,
-                sfImage: "envelope.fill"
+                sfImage: "envelope.fill",
+                isAnimation: true,
+                textForgroundColor: .blue
             )
             
             //MARK: - Password
             CustomTextFiledMethod(
                 placeHolderName: "Password",
                 text: $pass,
-                style: .UnderLineTextFiled,
+                style: .OutLineTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
-                isDisplayCloseBtn: false
+                isDisplayCloseBtn: false,
+                isAnimation: true,
+                textForgroundColor: .blue
             )
             
             //MARK: - Password
             CustomTextFiledMethod(
-                placeHolderName: "Confrim Password",
+                placeHolderName: "Confirm Password",
                 text: $ConfirmPass,
                 style: .OutLineTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .ConfirmPasswordType,
                 sfImage: "square.and.pencil.circle.fill",
-                isDisplayCloseBtn: false
+                isDisplayCloseBtn: false,
+                isAnimation: true,
+                textForgroundColor: .blue
             )
-            
-            Spacer()
             
             //MARK: - Submit Button
             Button {
@@ -107,15 +115,16 @@ public struct ContentView: View {
             .background {
                 Capsule()
             }
-            .padding(.bottom)
+            .padding(.top)
             
+            Spacer()
         }
-        .padding(.horizontal)
+        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SignInCustomWithAnimationTextfiledView()
     }
 }

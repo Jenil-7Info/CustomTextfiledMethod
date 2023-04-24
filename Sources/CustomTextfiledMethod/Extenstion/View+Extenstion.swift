@@ -66,4 +66,10 @@ extension View {
             self
         }
     }
+    
+    public func animationEffect() -> some View {
+        withAnimation(.spring(response: 1)) {
+            self
+        }
+    }
 }

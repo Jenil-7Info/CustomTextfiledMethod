@@ -31,3 +31,13 @@ public enum TextfiledType: String {
     case PasswordType
     case ConfirmPasswordType
 }
+
+//MARK: - Text Side
+public enum TextSide  {
+    case TopLeft
+    case TopCenter
+    case TopRight
+    case BottomLeft
+    case BottomCenter
+    case BottomRight
+}

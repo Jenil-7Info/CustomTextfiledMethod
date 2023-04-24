@@ -18,6 +18,9 @@ public struct CustomTextFiledMethod: View {
     @State var sfImage: String?
     @State var customImage: String?
     @State var isDisplayCloseBtn : Bool
+    @State var isAnimation: Bool
+    @State var textSide: TextSide
+    @State var textForgroundColor: Color?
     
     /// Only Four Requriment Parameters use like placeHolderName, text, style, imageStyle, and other Parameter are Optional Or Defaults values.
     /// - Parameters:
@@ -39,7 +42,10 @@ public struct CustomTextFiledMethod: View {
         textFiledType: TextfiledType,
         sfImage: String? = nil,
         customImage: String? = nil,
-        isDisplayCloseBtn: Bool = true
+        isDisplayCloseBtn: Bool = true,
+        isAnimation: Bool,
+        textSide: TextSide = .TopLeft,
+        textForgroundColor: Color = .blue
     ) {
         self.placeHolderName = placeHolderName
         self._text = text
@@ -49,64 +55,384 @@ public struct CustomTextFiledMethod: View {
         self.sfImage = sfImage
         self.customImage = customImage
         self.isDisplayCloseBtn = isDisplayCloseBtn
+        self.isAnimation = isAnimation
+        self.textSide = textSide
+        self.textForgroundColor = textForgroundColor
     }
     
     public var body: some View {
         
-        //MARK: - Choose anyone Method
-        switch style {
-        case .OutLineTextFiled:
+        //MARK: - With Animation
+        if isAnimation {
             
-            //OutlinedTextFiledSytle - create Oultline textfiled
-            OutlinedTextFieldStyle(
-                placeHolderName: placeHolderName,
-                text: $text,
-                imageStyle: imageStyle,
-                textfiledType: textFiledType,
-                isCloseBtn: isDisplayCloseBtn,
-                sfImage: sfImage,
-                cImage: customImage
-            )
-            .onAppear {
+            //MARK: - Style Method
+            switch style {
+            case .OutLineTextFiled:
+                
+                //MARK: - OutLineTextFiled
+                switch textSide {
+                case .TopLeft, .TopCenter, .TopRight:
+                    
+                    if !text.isEmpty {
+                        
+                        if textSide == .TopLeft {
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                    
+                    //OutlinedTextFiledSytle - create Oultline textfiled
+                    OutlinedTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
 #if DEBUG
-                UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 #endif
+                    }
+                    
+                case .BottomLeft, .BottomCenter, .BottomRight:
+                    
+                    //OutlinedTextFiledSytle - create Oultline textfiled
+                    OutlinedTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
+#if DEBUG
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+#endif
+                    }
+                    
+                    if !text.isEmpty {
+                        if textSide == .BottomLeft {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                }
+                
+                
+            case .UnderLineTextFiled:
+                
+                //MARK: - UnderLineTextFiled
+                switch textSide {
+                case .TopLeft, .TopCenter, .TopRight:
+                    
+                    if !text.isEmpty {
+                        if textSide == .TopLeft {
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                    
+                    //UnderlinedTextFieldStyle - create underline Textfiled
+                    UnderlinedTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
+    #if DEBUG
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                    }
+                    
+                case .BottomLeft, .BottomCenter, .BottomRight:
+                    
+                    //UnderlinedTextFieldStyle - create underline Textfiled
+                    UnderlinedTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
+    #if DEBUG
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                    }
+                    
+                    if !text.isEmpty {
+                        if textSide == .BottomLeft {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                }
+                
+               
+                
+            case .CapsuleTextFiled:
+                
+                
+                //MARK: - CapsuleTextFiled
+                switch textSide {
+                case .TopLeft, .TopCenter, .TopRight:
+                    
+                    if !text.isEmpty {
+                        if textSide == .TopLeft {
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .TopRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                    
+                    //CapsuleTextFieldStyle - Create Capsule Texfiled
+                    CapsuleTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
+    #if DEBUG
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                    }
+
+                    
+                case .BottomLeft, .BottomCenter, .BottomRight:
+                    
+                    //CapsuleTextFieldStyle - Create Capsule Texfiled
+                    CapsuleTextFieldStyle(
+                        placeHolderName: placeHolderName,
+                        text: $text,
+                        imageStyle: imageStyle,
+                        textfiledType: textFiledType,
+                        isCloseBtn: isDisplayCloseBtn,
+                        sfImage: sfImage,
+                        cImage: customImage
+                    )
+                    .onAppear {
+    #if DEBUG
+                        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                    }
+
+                    
+                    if !text.isEmpty {
+                        if textSide == .BottomLeft {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .leftH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomCenter {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .centerH()
+                                .padding(.horizontal, 2)
+                        }
+                        if textSide == .BottomRight {
+                            
+                            Text(placeHolderName)
+                                .font(.headline)
+                                .foregroundColor(textForgroundColor)
+                                .animationEffect()
+                                .rightH()
+                                .padding(.horizontal, 2)
+                        }
+                    }
+                }
             }
-            
-        case .UnderLineTextFiled:
-            
-            //UnderlinedTextFieldStyle - create underline Textfiled
-            UnderlinedTextFieldStyle(
-                placeHolderName: placeHolderName,
-                text: $text,
-                imageStyle: imageStyle,
-                textfiledType: textFiledType,
-                isCloseBtn: isDisplayCloseBtn,
-                sfImage: sfImage,
-                cImage: customImage
-            )
-            .onAppear {
-#if DEBUG
-                UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-#endif
-            }
-            
-        case .CapsuleTextFiled:
-            
-            //CapsuleTextFieldStyle - Create Capsule Texfiled
-            CapsuleTextFieldStyle(
-                placeHolderName: placeHolderName,
-                text: $text,
-                imageStyle: imageStyle,
-                textfiledType: textFiledType,
-                isCloseBtn: isDisplayCloseBtn,
-                sfImage: sfImage,
-                cImage: customImage
-            )
-            .onAppear {
-#if DEBUG
-                UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-#endif
+        }
+        
+        //MARK: - Without Animation
+        else {
+            //MARK: - Choose anyone Method
+            switch style {
+            case .OutLineTextFiled:
+                
+                //OutlinedTextFiledSytle - create Oultline textfiled
+                OutlinedTextFieldStyle(
+                    placeHolderName: placeHolderName,
+                    text: $text,
+                    imageStyle: imageStyle,
+                    textfiledType: textFiledType,
+                    isCloseBtn: isDisplayCloseBtn,
+                    sfImage: sfImage,
+                    cImage: customImage
+                )
+                .onAppear {
+    #if DEBUG
+                    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                }
+                
+            case .UnderLineTextFiled:
+                
+                //UnderlinedTextFieldStyle - create underline Textfiled
+                UnderlinedTextFieldStyle(
+                    placeHolderName: placeHolderName,
+                    text: $text,
+                    imageStyle: imageStyle,
+                    textfiledType: textFiledType,
+                    isCloseBtn: isDisplayCloseBtn,
+                    sfImage: sfImage,
+                    cImage: customImage
+                )
+                .onAppear {
+    #if DEBUG
+                    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                }
+                
+            case .CapsuleTextFiled:
+                
+                //CapsuleTextFieldStyle - Create Capsule Texfiled
+                CapsuleTextFieldStyle(
+                    placeHolderName: placeHolderName,
+                    text: $text,
+                    imageStyle: imageStyle,
+                    textfiledType: textFiledType,
+                    isCloseBtn: isDisplayCloseBtn,
+                    sfImage: sfImage,
+                    cImage: customImage
+                )
+                .onAppear {
+    #if DEBUG
+                    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                }
             }
         }
     }
