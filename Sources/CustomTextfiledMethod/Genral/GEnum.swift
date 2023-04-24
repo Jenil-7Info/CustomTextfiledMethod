@@ -14,6 +14,7 @@ public enum CustomTextFiledStyle: String {
     case OutLineTextFiled
     case UnderLineTextFiled
     case CapsuleTextFiled
+    case MatrialTextfiled
 }
 
 //MARK: - Image Textfiled

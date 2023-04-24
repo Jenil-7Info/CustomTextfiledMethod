@@ -51,7 +51,7 @@ public struct CustomTextFiledMethod: View {
         textForgroundColor: Color = .black
     ) {
         self.placeHolderName = placeHolderName
-        self._text = text
+        self._text = text   //text is binding<String> value. so use the self._text ....
         self.style = style
         self.imageStyle = imageStyle
         self.textFiledType = textFiledType
@@ -375,6 +375,9 @@ public struct CustomTextFiledMethod: View {
                         }
                     }
                 }
+            case .MatrialTextfiled:
+                
+                MaterialTextfiledStyle(placeHolderName: placeHolderName, text: $text, imageStyle: imageStyle, textfiledType: textFiledType, isCloseBtn: isDisplayCloseBtn)
             }
         }
         
@@ -429,6 +432,21 @@ public struct CustomTextFiledMethod: View {
                     isCloseBtn: isDisplayCloseBtn,
                     sfImage: sfImage,
                     cImage: customImage
+                )
+                .onAppear {
+    #if DEBUG
+                    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+    #endif
+                }
+                
+            case .MatrialTextfiled:
+                
+                MaterialTextfiledStyle(
+                    placeHolderName: placeHolderName,
+                    text: $text,
+                    imageStyle: imageStyle,
+                    textfiledType: textFiledType,
+                    isCloseBtn: isDisplayCloseBtn
                 )
                 .onAppear {
     #if DEBUG

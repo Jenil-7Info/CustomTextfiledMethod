@@ -27,8 +27,8 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             CustomTextFiledMethod(
                 placeHolderName: "First Name",
                 text: $fName,
-                style: .OutLineTextFiled,
-                imageStyle: .sfImage,
+                style: .MatrialTextfiled,
+                imageStyle: .none,
                 textFiledType: .NameType,
                 sfImage: "person.fill",
                 isAnimation: true
