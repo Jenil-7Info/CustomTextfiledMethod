@@ -43,7 +43,7 @@ public struct CustomTextFiledMethod: View {
         sfImage: String? = nil,
         customImage: String? = nil,
         isDisplayCloseBtn: Bool = true,
-        isAnimation: Bool,
+        isAnimation: Bool = false,
         textSide: TextSide = .TopLeft,
         textForgroundColor: Color = .black
     ) {
