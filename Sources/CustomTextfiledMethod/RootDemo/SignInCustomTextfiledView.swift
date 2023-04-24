@@ -33,8 +33,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 textFiledType: .NameType,
                 sfImage: "person.fill",
                 isDisplayCloseBtn: true,
-                isAnimation: true,
-                textForgroundColor: .blue
+                isAnimation: true
             )
             
             //MARK: - Last Name
@@ -47,7 +46,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 sfImage: "person.fill",
                 isDisplayCloseBtn: true, //default true
                 isAnimation: true,
-                textForgroundColor: .blue
+                textForgroundColor: .red
             )
             
             //MARK: - Phone Number

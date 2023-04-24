@@ -20,7 +20,7 @@ public struct CustomTextFiledMethod: View {
     @State var isDisplayCloseBtn : Bool
     @State var isAnimation: Bool
     @State var textSide: TextSide
-    @State var textForgroundColor: Color?
+    @State var textForgroundColor: Color
     
     /// Only Four Requriment Parameters use like placeHolderName, text, style, imageStyle, and other Parameter are Optional Or Defaults values.
     /// - Parameters:
@@ -45,7 +45,7 @@ public struct CustomTextFiledMethod: View {
         isDisplayCloseBtn: Bool = true,
         isAnimation: Bool,
         textSide: TextSide = .TopLeft,
-        textForgroundColor: Color = .blue
+        textForgroundColor: Color = .black
     ) {
         self.placeHolderName = placeHolderName
         self._text = text
