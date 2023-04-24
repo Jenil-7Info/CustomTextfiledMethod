@@ -74,22 +74,10 @@ public struct OutlinedTextFieldStyle: View {
                         .keyboardType(.default)
                 }
                 
-            case .ConfirmPasswordType:
-                
-                if isShowPass {
-                    TextField(placeHolderName, text: $text)
-                        .autocorrectionDisabled(true)
-                        .keyboardType(.default)
-                } else {
-                    SecureField(placeHolderName, text: $text)
-                        .autocorrectionDisabled(true)
-                        .keyboardType(.default)
-                }
-                
             }
             
             //MARK: - Show and Hide password
-            if textfiledType == .PasswordType || textfiledType == .ConfirmPasswordType {
+            if textfiledType == .PasswordType {
                 
                 Button {
                     isShowPass.toggle()

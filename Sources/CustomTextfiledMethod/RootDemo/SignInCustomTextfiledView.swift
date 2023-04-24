@@ -32,8 +32,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 imageStyle: .sfImage,
                 textFiledType: .NameType,
                 sfImage: "person.fill",
-                isDisplayCloseBtn: true,
-                isAnimation: true
+                isDisplayCloseBtn: true
             )
             
             //MARK: - Last Name
@@ -92,7 +91,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 text: $ConfirmPass,
                 style: .OutLineTextFiled,
                 imageStyle: .sfImage,
-                textFiledType: .ConfirmPasswordType,
+                textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false,
                 isAnimation: true,

@@ -29,7 +29,6 @@ public enum TextfiledType: String {
     case EmailType
     case TenDigitPhoneNumberType
     case PasswordType
-    case ConfirmPasswordType
 }
 
 //MARK: - Text Side

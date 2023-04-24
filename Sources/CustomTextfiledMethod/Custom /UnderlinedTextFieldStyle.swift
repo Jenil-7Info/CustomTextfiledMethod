@@ -72,22 +72,9 @@ public struct UnderlinedTextFieldStyle: View {
                         .autocorrectionDisabled(true)
                         .keyboardType(.default)
                 }
-                
-            case .ConfirmPasswordType:
-                
-                if isShowPass {
-                    TextField(placeHolderName, text: $text)
-                        .autocorrectionDisabled(true)
-                        .keyboardType(.default)
-                } else {
-                    SecureField(placeHolderName, text: $text)
-                        .autocorrectionDisabled(true)
-                        .keyboardType(.default)
-                }
-                
             }
             
-            if textfiledType == .PasswordType || textfiledType == .ConfirmPasswordType {
+            if textfiledType == .PasswordType {
                 
                 Button {
                     isShowPass.toggle()
