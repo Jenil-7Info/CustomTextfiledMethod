@@ -77,7 +77,6 @@ public struct CustomTextFiledMethod: View {
                         
                         if textSide == .TopLeft {
                             Text(placeHolderName)
-                                .font(.headline)
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -86,7 +85,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -95,7 +94,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
@@ -141,7 +140,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomLeft {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -150,7 +149,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -159,7 +158,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
@@ -178,7 +177,7 @@ public struct CustomTextFiledMethod: View {
                     if !text.isEmpty {
                         if textSide == .TopLeft {
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -187,7 +186,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -196,7 +195,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
@@ -242,7 +241,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomLeft {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -251,7 +250,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -260,7 +259,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
@@ -281,7 +280,7 @@ public struct CustomTextFiledMethod: View {
                     if !text.isEmpty {
                         if textSide == .TopLeft {
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -290,7 +289,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -299,7 +298,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .TopRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
@@ -347,7 +346,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomLeft {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .leftH()
@@ -356,7 +355,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomCenter {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .centerH()
@@ -365,7 +364,7 @@ public struct CustomTextFiledMethod: View {
                         if textSide == .BottomRight {
                             
                             Text(placeHolderName)
-                                .font(.headline)
+                                
                                 .foregroundColor(textForgroundColor)
                                 .animationEffect()
                                 .rightH()
