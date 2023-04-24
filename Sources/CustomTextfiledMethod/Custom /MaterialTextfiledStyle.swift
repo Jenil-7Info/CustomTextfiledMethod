@@ -22,16 +22,35 @@ struct MaterialTextfiledStyle: View {
     
     public var body: some View {
         VStack(spacing: 4) {
-            TextField(placeHolderName, text: $text) { status in
-                if status {
-                    withAnimation(.spring()) {
-                        isTapped = true
+            
+            HStack {
+                TextField(placeHolderName, text: $text) { status in
+                    if status {
+                        withAnimation(.spring()) {
+                            isTapped = true
+                        }
+                    }
+                } onCommit: {
+                    if text.isEmpty {
+                        withAnimation(.spring()) {
+                            isTapped = false
+                        }
                     }
                 }
-            } onCommit: {
-                if text.isEmpty {
-                    withAnimation(.spring()) {
-                        isTapped = false
+                
+                //NOTE: - display Close button
+                if isCloseBtn {
+                    
+                    //check the Empty textfiled
+                    if !text.isEmpty {
+                        
+                        Button {
+                            //make empty textfiled data
+                            text = ""
+                        } label: {
+                            Image(systemName: "multiply.circle.fill")
+                                .foregroundColor(.gray)
+                        }
                     }
                 }
             }
