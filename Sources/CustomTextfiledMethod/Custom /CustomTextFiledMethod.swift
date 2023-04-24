@@ -32,7 +32,10 @@ public struct CustomTextFiledMethod: View {
     ///     this attributes use the keyborad type...
     ///     - sfImage       : This is optional parameter. If You select imageStyle.sfImage, then use this parameter.
     ///     - customImage   : This is optional parameter. If You select imageStyle.Customimage, then use this parameter.
-    ///     - isDisplayCloseBtn : By Default is True. 
+    ///     - isDisplayCloseBtn : By Default is True.
+    ///     - isAnimation   : By default false. this parameter use in textfiled animations.
+    ///     - textSide      : You can use the textSide [like, Topleft, Topright, bottomCenter, ...]
+    ///     - textForgroundColor : This parameter use the text Forgound color.
     
     public init(
         placeHolderName: String,

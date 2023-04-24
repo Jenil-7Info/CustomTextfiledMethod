@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 extension View {
     
     //MARK: - EmailAddress Validation

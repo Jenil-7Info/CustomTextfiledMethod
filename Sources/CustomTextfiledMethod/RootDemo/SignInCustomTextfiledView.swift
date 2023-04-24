@@ -18,7 +18,6 @@ public struct SignInCustomWithAnimationTextfiledView: View {
         
     public var body: some View {
         VStack(spacing: 20) {
-            
             Text("SignIn View")
                 .leftH()
                 .headingFont()
@@ -32,7 +31,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 imageStyle: .sfImage,
                 textFiledType: .NameType,
                 sfImage: "person.fill",
-                isDisplayCloseBtn: true
+                isAnimation: true
             )
             
             //MARK: - Last Name
@@ -43,9 +42,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 imageStyle: .sfImage,
                 textFiledType: .NameType,
                 sfImage: "person.fill",
-                isDisplayCloseBtn: true, //default true
-                isAnimation: true,
-                textForgroundColor: .red
+                isAnimation: true
             )
             
             //MARK: - Phone Number
@@ -53,11 +50,10 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 placeHolderName: "Phone Number",
                 text: $phone,
                 style: .OutLineTextFiled,
-                imageStyle: .customImage,
+                imageStyle: .sfImage,
                 textFiledType: .TenDigitPhoneNumberType,
-                customImage: "phone",
-                isAnimation: true,
-                textForgroundColor: .blue
+                sfImage: "phone.fill",
+                isAnimation: true
             )
             
             //MARK: - Email
@@ -68,8 +64,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 imageStyle: .sfImage,
                 textFiledType: .EmailType,
                 sfImage: "envelope.fill",
-                isAnimation: true,
-                textForgroundColor: .blue
+                isAnimation: true
             )
             
             //MARK: - Password
@@ -81,11 +76,10 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false,
-                isAnimation: true,
-                textForgroundColor: .blue
+                isAnimation: true
             )
             
-            //MARK: - Password
+            //MARK: - Confirm Password
             CustomTextFiledMethod(
                 placeHolderName: "Confirm Password",
                 text: $ConfirmPass,
@@ -94,14 +88,17 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false,
-                isAnimation: true,
-                textForgroundColor: .blue
+                isAnimation: true
             )
             
             //MARK: - Submit Button
             Button {
-         
-                
+                fName       = ""
+                lName       = ""
+                phone       = ""
+                email       = ""
+                pass        = ""
+                ConfirmPass = ""
             } label: {
                 Text("Submit")
                     .bold()
