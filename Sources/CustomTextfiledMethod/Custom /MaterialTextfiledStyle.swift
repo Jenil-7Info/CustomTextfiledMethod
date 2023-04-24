@@ -24,14 +24,13 @@ struct MaterialTextfiledStyle: View {
         VStack(spacing: 4) {
             TextField(placeHolderName, text: $text) { status in
                 if status {
-                    withAnimation(.easeIn) {
+                    withAnimation(.spring()) {
                         isTapped = true
                     }
                 }
             } onCommit: {
-                
                 if text.isEmpty {
-                    withAnimation(.easeOut) {
+                    withAnimation(.spring()) {
                         isTapped = false
                     }
                 }
