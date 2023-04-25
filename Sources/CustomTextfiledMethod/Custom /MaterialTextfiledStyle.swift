@@ -41,6 +41,8 @@ struct MaterialTextfiledStyle: View {
                             }
                         }
                     }
+                    .autocorrectionDisabled(true)
+                    .keyboardType(.default)
                     
                     //NOTE: - display Close button
                     if isCloseBtn {
@@ -73,6 +75,8 @@ struct MaterialTextfiledStyle: View {
                             }
                         }
                     }
+                    .autocorrectionDisabled(true)
+                    .keyboardType(.emailAddress)
                     
                     //NOTE: - display Close button
                     if isCloseBtn {
@@ -105,6 +109,8 @@ struct MaterialTextfiledStyle: View {
                             }
                         }
                     }
+                    .autocorrectionDisabled(true)
+                    .keyboardType(.numberPad)
                     
                     //NOTE: - display Close button
                     if isCloseBtn {
@@ -138,6 +144,8 @@ struct MaterialTextfiledStyle: View {
                                 }
                             }
                         }
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
                     }
                     else {
                         SecureField(placeHolderName, text: $text) {
@@ -152,6 +160,8 @@ struct MaterialTextfiledStyle: View {
                                 isTapped = true
                             }
                         }
+                        .autocorrectionDisabled(true)
+                        .keyboardType(.default)
                     }
                     
                     if textfiledType == .PasswordType {

@@ -31,7 +31,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
                 imageStyle: .none,
                 textFiledType: .NameType,
                 sfImage: "person.fill",
-                isAnimation: true
+                isAnimation: false
             )
             
             //MARK: - Last Name
@@ -49,7 +49,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             CustomTextFiledMethod(
                 placeHolderName: "Phone Number",
                 text: $phone,
-                style: .OutLineTextFiled,
+                style: .UnderLineTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .TenDigitPhoneNumberType,
                 sfImage: "phone.fill",
@@ -60,7 +60,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             CustomTextFiledMethod(
                 placeHolderName: "Email Address",
                 text: $email,
-                style: .OutLineTextFiled,
+                style: .CapsuleTextFiled,
                 imageStyle: .sfImage,
                 textFiledType: .EmailType,
                 sfImage: "envelope.fill",
