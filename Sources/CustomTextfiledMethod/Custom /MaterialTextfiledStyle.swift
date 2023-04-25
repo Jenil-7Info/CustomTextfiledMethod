@@ -28,15 +28,99 @@ struct MaterialTextfiledStyle: View {
                 switch textfiledType {
                 case .NameType:
                  
-                    MatiralTextFiledView(placeHolderName: placeHolderName, text: $text, textfiledType: textfiledType, isCloseBtn: isCloseBtn)
+                    TextField(placeHolderName, text: $text) { status in
+                        if status {
+                            withAnimation(.spring()) {
+                                isTapped = true
+                            }
+                        }
+                    } onCommit: {
+                        if text.isEmpty {
+                            withAnimation(.spring()) {
+                                isTapped = false
+                            }
+                        }
+                    }
+                    
+                    //NOTE: - display Close button
+                    if isCloseBtn {
+                        
+                        //check the Empty textfiled
+                        if !text.isEmpty {
+                            
+                            Button {
+                                //make empty textfiled data
+                                text = ""
+                            } label: {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
                     
                 case .EmailType:
                     
-                    MatiralTextFiledView(placeHolderName: placeHolderName, text: $text, textfiledType: textfiledType, isCloseBtn: isCloseBtn)
+                    TextField(placeHolderName, text: $text) { status in
+                        if status {
+                            withAnimation(.spring()) {
+                                isTapped = true
+                            }
+                        }
+                    } onCommit: {
+                        if text.isEmpty {
+                            withAnimation(.spring()) {
+                                isTapped = false
+                            }
+                        }
+                    }
+                    
+                    //NOTE: - display Close button
+                    if isCloseBtn {
+                        
+                        //check the Empty textfiled
+                        if !text.isEmpty {
+                            
+                            Button {
+                                //make empty textfiled data
+                                text = ""
+                            } label: {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
                     
                 case .TenDigitPhoneNumberType:
                     
-                    MatiralTextFiledView(placeHolderName: placeHolderName, text: $text, textfiledType: textfiledType, isCloseBtn: isCloseBtn)
+                    TextField(placeHolderName, text: $text) { status in
+                        if status {
+                            withAnimation(.spring()) {
+                                isTapped = true
+                            }
+                        }
+                    } onCommit: {
+                        if text.isEmpty {
+                            withAnimation(.spring()) {
+                                isTapped = false
+                            }
+                        }
+                    }
+                    
+                    //NOTE: - display Close button
+                    if isCloseBtn {
+                        
+                        //check the Empty textfiled
+                        if !text.isEmpty {
+                            
+                            Button {
+                                //make empty textfiled data
+                                text = ""
+                            } label: {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
                     
                 case .PasswordType:
                     
@@ -82,46 +166,5 @@ struct MaterialTextfiledStyle: View {
         .padding(.top, 12)
         .background(Color.gray.opacity(0.09))
         .cornerRadius(5)
-    }
-}
-
-struct MatiralTextFiledView: View {
-    
-    @State var placeHolderName: String
-    @Binding var text: String
-    @State var textfiledType: TextfiledType
-    @State var isCloseBtn : Bool
-    @State var isTapped: Bool = false
-    
-    var body: some View {
-        TextField(placeHolderName, text: $text) { status in
-            if status {
-                withAnimation(.spring()) {
-                    isTapped = true
-                }
-            }
-        } onCommit: {
-            if text.isEmpty {
-                withAnimation(.spring()) {
-                    isTapped = false
-                }
-            }
-        }
-        
-        //NOTE: - display Close button
-        if isCloseBtn {
-            
-            //check the Empty textfiled
-            if !text.isEmpty {
-                
-                Button {
-                    //make empty textfiled data
-                    text = ""
-                } label: {
-                    Image(systemName: "multiply.circle.fill")
-                        .foregroundColor(.gray)
-                }
-            }
-        }
     }
 }
