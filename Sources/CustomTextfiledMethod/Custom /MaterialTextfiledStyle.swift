@@ -30,13 +30,13 @@ struct MaterialTextfiledStyle: View {
                  
                     TextField(placeHolderName, text: $text) { status in
                         if status {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeIn) {
                                 isTapped = true
                             }
                         }
                     } onCommit: {
                         if text.isEmpty {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeOut) {
                                 isTapped = false
                             }
                         }
@@ -62,13 +62,13 @@ struct MaterialTextfiledStyle: View {
                     
                     TextField(placeHolderName, text: $text) { status in
                         if status {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeIn) {
                                 isTapped = true
                             }
                         }
                     } onCommit: {
                         if text.isEmpty {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeOut) {
                                 isTapped = false
                             }
                         }
@@ -94,13 +94,13 @@ struct MaterialTextfiledStyle: View {
                     
                     TextField(placeHolderName, text: $text) { status in
                         if status {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeIn) {
                                 isTapped = true
                             }
                         }
                     } onCommit: {
                         if text.isEmpty {
-                            withAnimation(.spring()) {
+                            withAnimation(.easeOut) {
                                 isTapped = false
                             }
                         }
@@ -124,18 +124,28 @@ struct MaterialTextfiledStyle: View {
                     
                 case .PasswordType:
                     
-                    TextField(placeHolderName, text: $text) { status in
-                        if status {
-                            withAnimation(.spring()) {
-                                isTapped = true
+                    if isShowPass {
+                        TextField(placeHolderName, text: $text) { status in
+                            if status {
+                                withAnimation(.easeIn) {
+                                    isTapped = true
+                                }
+                            }
+                        } onCommit: {
+                            if text.isEmpty {
+                                withAnimation(.easeOut) {
+                                    isTapped = false
+                                }
                             }
                         }
-                    } onCommit: {
-                        if text.isEmpty {
-                            withAnimation(.spring()) {
-                                isTapped = false
+                    }
+                    else {
+                        SecureField(placeHolderName, text: $text)
+                            .onSubmit {
+                                withAnimation(.easeIn) {
+                                    isTapped.toggle()
+                                }
                             }
-                        }
                     }
                     
                     if textfiledType == .PasswordType {
