@@ -73,7 +73,6 @@ public struct OutlinedTextFieldStyle: View {
                         .autocorrectionDisabled(true)
                         .keyboardType(.default)
                 }
-                
             }
             
             //MARK: - Show and Hide password
