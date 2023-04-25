@@ -140,12 +140,18 @@ struct MaterialTextfiledStyle: View {
                         }
                     }
                     else {
-                        SecureField(placeHolderName, text: $text)
-                            .onSubmit {
-                                withAnimation(.easeIn) {
-                                    isTapped.toggle()
+                        SecureField(placeHolderName, text: $text) {
+                            if text.isEmpty {
+                                withAnimation(.easeOut) {
+                                    isTapped = false
                                 }
                             }
+                        }
+                        .onChange(of: text) { _ in
+                            withAnimation {
+                                isTapped = true
+                            }
+                        }
                     }
                     
                     if textfiledType == .PasswordType {
