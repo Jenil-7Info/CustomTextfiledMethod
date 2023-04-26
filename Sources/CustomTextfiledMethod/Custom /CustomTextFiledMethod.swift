@@ -14,11 +14,11 @@ public struct CustomTextFiledMethod: View {
     @Binding var text: String
     @State var style: CustomTextFiledStyle
     @State var imageStyle: ImageTextfiled
-    @State var textFiledType: TextfiledType
     @State var sfImage: String?
     @State var customImage: String?
+    @State var textFiledType: TextfiledType
     @State var isDisplayCloseBtn : Bool
-    @State var isAnimation: Bool
+    @State var isAnimation: Bool?
     @State var textSide: TextSide
     @State var textForgroundColor: Color
     

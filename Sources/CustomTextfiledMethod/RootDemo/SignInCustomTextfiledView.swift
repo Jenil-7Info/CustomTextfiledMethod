@@ -71,12 +71,12 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             CustomTextFiledMethod(
                 placeHolderName: "Password",
                 text: $pass,
-                style: .OutLineTextFiled,
+                style: .MatrialTextfiled,
                 imageStyle: .sfImage,
                 textFiledType: .PasswordType,
                 sfImage: "square.and.pencil.circle.fill",
                 isDisplayCloseBtn: false,
-                isAnimation: true
+                isAnimation: false
             )
             
             //MARK: - Confirm Password
