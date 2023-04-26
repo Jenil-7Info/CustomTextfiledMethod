@@ -93,12 +93,7 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             
             //MARK: - Submit Button
             Button {
-                fName       = ""
-                lName       = ""
-                phone       = ""
-                email       = ""
-                pass        = ""
-                ConfirmPass = ""
+               validation()
             } label: {
                 Text("Submit")
                     .bold()
@@ -115,7 +110,47 @@ public struct SignInCustomWithAnimationTextfiledView: View {
             Spacer()
         }
         .padding()
+        
+        
     }
+    
+    func validation()  {
+        if isValidName(text: fName) {
+            fName = "Sucessfull"
+        }
+        if isValidName(text: lName) {
+            lName = "Sucessfull"
+        }
+        if isValidPhoneNumber(phone: phone) {
+            phone = "Sucessfull"
+        }
+        if isValidEmail(email: email) {
+            email = "Sucessfull"
+        }
+        if pass == ConfirmPass {
+            pass = "Sucessfull"
+            ConfirmPass = "Sucessful"
+        }
+        else {
+            if !isValidName(text: fName) {
+                fName = ""
+            }
+            if !isValidName(text: lName) {
+                lName = ""
+            }
+            if !isValidPhoneNumber(phone: phone) {
+                phone = ""
+            }
+            if !isValidEmail(email: email) {
+                email = ""
+            }
+            if pass != ConfirmPass {
+                pass = ""
+                ConfirmPass = ""
+            }
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

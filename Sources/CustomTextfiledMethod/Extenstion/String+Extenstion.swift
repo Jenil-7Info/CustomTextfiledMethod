@@ -19,7 +19,7 @@ extension View {
     
     //MARK: - User Name Validation
     public func isValidName(text: String) -> Bool {
-        let usernameRegEx = "^[a-zA-Z-]+ ?.* [a-zA-Z-]+$"
+        let usernameRegEx = "^[a-zA-Z-]+"
         let userPred = NSPredicate(format:"SELF MATCHES %@", usernameRegEx)
         return userPred.evaluate(with: text)
     }
