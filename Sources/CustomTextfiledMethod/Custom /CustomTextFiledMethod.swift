@@ -66,7 +66,7 @@ public struct CustomTextFiledMethod: View {
     public var body: some View {
         
         //MARK: - With Animation
-        if isAnimation {
+        if isAnimation! {
             
             //MARK: - Style Method
             switch style {
